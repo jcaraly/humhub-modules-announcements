@@ -18,7 +18,7 @@ use humhub\modules\file\widgets\FilePreview;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($announcement, 'message')->widget(\humhub\widgets\RichTextEditor::class, [
+    <?= $form->field($announcement, 'message')->widget(RichTextField::class, [
         'pluginOptions' => ['maxHeight' => '300px'],
         'disabled' => $announcement->closed,
         'placeholder' => Yii::t('AnnouncementsModule.base', 'Edit your message')
