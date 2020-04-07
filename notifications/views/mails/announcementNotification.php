@@ -27,7 +27,7 @@ use humhub\widgets\mails\MailButton;
 ?>
 <?php $this->beginContent('@notification/views/layouts/mail.php', $_params_); ?>
 
-<?php $contentRecord = humhub\modules\content\widgets\richtext\RichText::processText($viewable->source) ?>
+<?php $contentRecord = $viewable->source ?>
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0" align="left">
     <tr>
@@ -44,7 +44,7 @@ use humhub\widgets\mails\MailButton;
         <td>
             <?= MailContentEntry::widget([
                 'originator' => $originator,
-                'content' => $contentRecord,
+                'content' => humhub\modules\content\widgets\richtext\RichText::processText($contentRecord),
                 'date' => $date,
                 'space' => $space
             ]);
