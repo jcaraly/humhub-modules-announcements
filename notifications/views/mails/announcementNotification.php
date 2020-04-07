@@ -44,7 +44,7 @@ use humhub\widgets\mails\MailButton;
         <td>
             <?= MailContentEntry::widget([
                 'originator' => $originator,
-                'content' => humhub\modules\content\widgets\richtext\RichText::processText($contentRecord),
+                'content' => $contentRecord,
                 'date' => $date,
                 'space' => $space
             ]);
