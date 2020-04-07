@@ -1,8 +1,8 @@
 <?php
 
 use humhub\modules\announcements\assets\AnnouncementsAsset;
-//use humhub\modules\content\widgets\richtext\RichTextField;
-use humhub\widgets\RichtextField;
+use humhub\modules\content\widgets\richtext\RichTextField;
+//use humhub\widgets\RichtextField;
 
 
 AnnouncementsAsset::register($this);
