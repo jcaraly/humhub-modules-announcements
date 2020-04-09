@@ -10,7 +10,6 @@ use humhub\widgets\mails\MailHeadline;
 use humhub\widgets\mails\MailContentEntry;
 use humhub\widgets\mails\MailButtonList;
 use humhub\widgets\mails\MailButton;
-use humhub\modules\content\widgets\richtext\RichText;
 
 /* @var $this yii\web\View */
 /* @var $viewable humhub\modules\user\notifications\Mentioned */
@@ -45,7 +44,7 @@ use humhub\modules\content\widgets\richtext\RichText;
         <td>
             <?= MailContentEntry::widget([
                 'originator' => $originator,
-                'content' => Richtext::output($contentRecord),
+                'content' => $contentRecord,
                 'date' => $date,
                 'space' => $space
             ]);
