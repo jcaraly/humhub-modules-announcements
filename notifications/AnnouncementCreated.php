@@ -44,9 +44,10 @@ class AnnouncementCreated extends BaseNotification
      */
     public function html()
     {
-        return Yii::t('AnnouncementsModule.notifications', '{displayName} created a new Announcement in space {spaceName}.', [
+        return Yii::t('AnnouncementsModule.notifications', '{displayName} : "{subject}..." dans l\'espace {spaceName}.', [
             'displayName' => Html::tag('strong', Html::encode($this->originator->displayName)),
-            'spaceName' =>  Html::tag('strong',Html::encode($this->source->content->container->displayName))
+            'spaceName' =>  Html::tag('strong',Html::encode($this->source->content->container->displayName)),
+            'subject' =>  substr(Html::encode($this->source->content),0,35)
         ]);
     }
 
@@ -55,8 +56,10 @@ class AnnouncementCreated extends BaseNotification
      */
     public function getMailSubject()
     {
-        return Yii::t('AnnouncementsModule.notifications', '{displayName} created a new Announcement.', [
-            'displayName' => Html::encode($this->originator->displayName),
+        return Yii::t('AnnouncementsModule.notifications', '{displayName} : "{subject}..." dans l\'espace {spaceName}.', [
+            'displayName' => Html::tag('strong', Html::encode($this->originator->displayName)),
+            'spaceName' =>  Html::tag('strong',Html::encode($this->source->content->container->displayName)),
+            'subject' =>  substr(Html::encode($this->source->content),0,35)
         ]);
     }
 }

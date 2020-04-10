@@ -59,7 +59,7 @@ use humhub\widgets\mails\MailButton;
             <?= MailButtonList::widget(['buttons' => [
                     MailButton::widget([
                         'url' => $url,
-                        'text' => Yii::t('ContentModule.notifications_mails', 'View Online')
+                        'text' => Yii::t('ContentModule.notifications_mails', 'Cliquez ici pour voir en ligne')
                     ])
             ]]);
             ?>
