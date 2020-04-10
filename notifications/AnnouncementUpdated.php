@@ -57,8 +57,8 @@ class AnnouncementUpdated extends BaseNotification
     public function getMailSubject()
     {
         return Yii::t('AnnouncementsModule.notifications', '{displayName} : "{subject}..." dans l\'espace {spaceName}.', [
-            'displayName' => Html::tag(Html::encode($this->originator->displayName)),
-            'spaceName' =>  Html::tag(Html::encode($this->source->content->container->displayName)),
+            'displayName' => Html::encode($this->originator->displayName),
+            'spaceName' =>  Html::encode($this->source->content->container->displayName),
             'subject' => $this->getContentPreview(null,55)
         ]);
     }
