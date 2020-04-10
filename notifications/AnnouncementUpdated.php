@@ -47,7 +47,7 @@ class AnnouncementUpdated extends BaseNotification
         return Yii::t('AnnouncementsModule.notifications', '{displayName} : "{subject}..." dans l\'espace {spaceName}.', [
             'displayName' => Html::tag('strong', Html::encode($this->originator->displayName)),
             'spaceName' =>  Html::tag('strong',Html::encode($this->source->content->container->displayName)),
-            'subject' => $this->getContentPreview(55)
+            'subject' => $this->getContentPreview(null,55)
         ]);
     }
 
@@ -59,7 +59,7 @@ class AnnouncementUpdated extends BaseNotification
         return Yii::t('AnnouncementsModule.notifications', '{displayName} : "{subject}..." dans l\'espace {spaceName}.', [
             'displayName' => Html::tag(Html::encode($this->originator->displayName)),
             'spaceName' =>  Html::tag(Html::encode($this->source->content->container->displayName)),
-            'subject' => $this->getContentPreview(55)
+            'subject' => $this->getContentPreview(null,55)
         ]);
     }
 
